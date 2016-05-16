@@ -9,6 +9,7 @@ function komodo-install {
 
   # Determines where the user likes to install Komodo to
   dest
+  echo $INDIR
 
   # Delete previous install attempt directories
   if [[ -d $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH ]]; then
@@ -62,8 +63,7 @@ function komodo-install {
 
     sudo rm $INDIR/resources/komodo-edit2.desktop
 
-    sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
-      $INDIR/resources/komodo-edit.desktop > $PRG/komodo-edit.desktop
+    sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" $INDIR/resources/komodo-edit.desktop > $PRG/komodo-edit.desktop
 
     rm $PRG/komodo-edit.desktop
     sudo rm /usr/share/applications/komodo-edit.desktop
