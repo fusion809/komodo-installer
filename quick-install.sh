@@ -81,7 +81,7 @@ else
     printf "\n"
     printf "Update your local copy? [y/n] "
     read yn
-    if [[ $yn == "y" ]]; then
+    if [[ $yn == "y" ]] || [[ -n $yn ]]; then
 
       ## git
       if [[ -d $GHUB/komodo-installer/.git ]]; then
