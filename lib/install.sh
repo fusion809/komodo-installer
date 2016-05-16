@@ -57,7 +57,7 @@ function komodo-install {
     if [[ -d $INST_DEST ]]; then
       sudo rm -rf $INST_DEST
     fi
-    sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
+    sudo ./install.sh -v -s -I $INST_DEST 2>&1 > /dev/null
 
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $INDIR/resources/komodo-edit2.desktop
