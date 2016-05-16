@@ -60,7 +60,7 @@ function komodo-install {
     fi
     sudo ./install.sh -v -s -I $INST_DEST 2>&1 > /dev/null
 
-    rm $INDIR/resources/komodo-edit2.desktop
+    sudo rm $INDIR/resources/komodo-edit2.desktop
 
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $INDIR/resources/komodo-edit2.desktop
