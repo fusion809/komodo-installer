@@ -52,13 +52,13 @@ function komodo-install {
 
   if [[ $DEST_TYPE == "local" ]]; then
 
-    ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
+    ./install.sh -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $HOME/.local/share/applications/komodo-edit.desktop
 
   else
 
-    sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
+    sudo ./install.sh -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
 
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" $INDIR/resources/komodo-edit.desktop > $INDIR/resources/komodo-edit2.desktop
 
