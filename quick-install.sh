@@ -30,32 +30,24 @@ if [[ -d $GHUBM ]]; then
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
     fi
   else
-    printf "The komodo-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if ! [[ $yn == "n" ]]; then
+    printf "Updating your local copy of komodo-installer"
 
-      ## git
-      if [[ -d $GHUBM/komodo-installer/.git ]]; then
-        cd $GHUBM/komodo-installer
-        git pull origin master
-        cd .
+    ## git
+    if [[ -d $GHUBM/komodo-installer/.git ]]; then
+      cd $GHUBM/komodo-installer
+      git pull origin master
+      cd .
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUBM/komodo-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUBM/komodo-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
 
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUBM/komodo-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUBM/komodo-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
     fi
-
   fi
 
 else
@@ -77,30 +69,23 @@ else
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
     fi
   else
-    printf "The komodo-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if ! [[ $yn == "n" ]]; then
+    printf "Updating your local copy of komodo-installer."
 
-      ## git
-      if [[ -d $GHUB/komodo-installer/.git ]]; then
-        cd $GHUB/komodo-installer
-        git pull origin master
-        cd .
+    ## git
+    if [[ -d $GHUB/komodo-installer/.git ]]; then
+      cd $GHUB/komodo-installer
+      git pull origin master
+      cd .
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUB/komodo-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUB/komodo-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
 
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUB/komodo-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUB/komodo-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
     fi
 
   fi
