@@ -15,6 +15,10 @@ function komodo-install {
     rm -rf $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
   fi
 
+  if [[ -d $INST_DEST ]]; then
+    sudo rm -rf $INST_DEST
+  fi
+
   # Get the source
 
   cd $SRC_DEST
@@ -49,16 +53,13 @@ function komodo-install {
 
   if [[ $DEST_TYPE == "local" ]]; then
 
-    ./install.sh -v -s -I $INST_DEST 2>&1 > /dev/null
+    ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $HOME/.local/share/applications/komodo-edit.desktop
 
   else
 
-    if [[ -d $INST_DEST ]]; then
-      sudo rm -rf $INST_DEST
-    fi
-    sudo ./install.sh -v -s -I $INST_DEST 2>&1 > /dev/null
+    sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
 
     sudo rm $INDIR/resources/komodo-edit2.desktop
 
