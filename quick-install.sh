@@ -30,7 +30,7 @@ if [[ -d $GHUBM ]]; then
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUBM
     fi
   else
-    printf "Updating your local copy of komodo-installer"
+    printf "Updating your local copy of komodo-installer. ==>\n"
 
     ## git
     if [[ -d $GHUBM/komodo-installer/.git ]]; then
