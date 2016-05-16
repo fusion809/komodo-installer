@@ -65,7 +65,6 @@ function komodo-install {
 
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" $INDIR/resources/komodo-edit.desktop > $PRG/komodo-edit.desktop
 
-    rm $PRG/komodo-edit.desktop
     sudo rm -rf /usr/share/applications/komodo-edit.desktop
     sudo install -Dm644 $PRG/komodo-edit.desktop /usr/share/applications/komodo-edit.desktop
 
