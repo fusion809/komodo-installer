@@ -69,7 +69,7 @@ else
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/komodo-installer-master/komodo-installer/ -C $GHUB
     fi
   else
-    printf "Updating your local copy of komodo-installer."
+    printf "Updating your local copy of komodo-installer. ==>\n"
 
     ## git
     if [[ -d $GHUB/komodo-installer/.git ]]; then
