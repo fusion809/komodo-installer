@@ -1,7 +1,8 @@
 # Komodo Installer
-<img src="http://imgur.com/q0bO5rU.png">
+<p>
+  <img src="http://imgur.com/q0bO5rU.png">
   <caption><b>Figure 1: Komodo Edit 9.3.2 running on CentOS 7</b></caption>
-</img>
+</p>
 This repository contains scripts for installing Komodo Edit from the binary tarballs provided by the Komodo Edit website.
 
 To install Komodo using the `quick-install.sh` script run (assuming cURL is installed):
