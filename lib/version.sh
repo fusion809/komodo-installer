@@ -8,7 +8,7 @@ function version {
     git pull origin master
   fi
 
-  export major=$(sed -n 's/_major=//p' /tmp/komodo-edit/PKGBUILD)
+  export major=$(sed -n 's/_major=//p' /tmp/komodo-edit/PKGBUILD | sed 's/"//g')
   export minor=$(sed -n 's/_minor=//p' /tmp/komodo-edit/PKGBUILD)
 }
 
