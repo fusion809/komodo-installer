@@ -22,7 +22,7 @@ function komodo-install {
         /tmp/komodo-edit/activestate.py.patch $SRC_DEST
 
   # prepare() function from PKGBUILD
-  cd $SRC_DEST/Komodo-Edit-${major}-${minor}-linux-$ARCH
+  cd "$SRC_DEST/Komodo-Edit-${major}-${minor}-linux-$ARCH"
 
   sed -i "s/__VERSION__/${major}-${minor}/" $SRC_DEST/_install.py.patch
   sed -i "s/__VERSION__/${major}-${minor}/" $SRC_DEST/activestate.py.patch
@@ -39,7 +39,7 @@ function komodo-install {
   patch -p0 -i $SRC_DEST/activestate.py.patch INSTALLDIR/lib/python/lib/python*.*/activestate.py
 
   # package() function
-  cd ${srcdir}/Komodo-Edit-$major-$minor-linux-$ARCH
+  cd $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
 
   if [[ $DEST_TYPE == "local" ]]; then
 
