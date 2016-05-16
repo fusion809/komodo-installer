@@ -68,7 +68,7 @@ function komodo-install {
     sudo install -dm644 $INDIR/resources/komodo-edit2.desktop /usr/share/applications/komodo-edit.desktop
 
     if ! [[ -f /usr/bin/komodo ]]; then
-      sudo ln -s $INST_DEST/bin/komodo /usr/bin/komodo
+      sudo ln -s $INST_DEST/INSTALLDIR/bin/komodo /usr/bin/komodo
     fi
   fi
 }
