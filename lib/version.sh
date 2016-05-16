@@ -9,7 +9,7 @@ function version {
   fi
 
   export major=$(sed -n 's/_major=//p' /tmp/komodo-edit/PKGBUILD)
-  export minor=$(sed -n 's/_major=//p' /tmp/komodo-edit/PKGBUILD)
+  export minor=$(sed -n 's/_minor=//p' /tmp/komodo-edit/PKGBUILD)
 }
 
 export -f version
