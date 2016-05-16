@@ -31,24 +31,8 @@ function komodo-install {
   cp -a /tmp/komodo-edit/_install.py.patch \
         /tmp/komodo-edit/activestate.py.patch $SRC_DEST
 
-  # prepare() function from PKGBUILD
-  cd "$SRC_DEST/Komodo-Edit-${major}-${minor}-linux-$ARCH"
-
-  sed -i "s/__VERSION__/${major}-${minor}/" $SRC_DEST/_install.py.patch
-  sed -i "s/__VERSION__/${major}-${minor}/" $SRC_DEST/activestate.py.patch
-
-  if [ $ARCH == "x86_64" ] ; then
-    sed -i "s/__ARCH__/x86_64/" $SRC_DEST/_install.py.patch
-    sed -i "s/__ARCH__/x86_64/" $SRC_DEST/activestate.py.patch
-  else
-    sed -i "s/__ARCH__/x86/" $SRC_DEST/_install.py.patch
-    sed -i "s/__ARCH__/x86/" $SRC_DEST/activestate.py.patch
-  fi
-
-  patch -p0 -i $SRC_DEST/_install.py.patch support/_install.py
-
   # package() function
-  cd $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
+  cd "$SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH"
 
   if [[ $DEST_TYPE == "local" ]]; then
 
