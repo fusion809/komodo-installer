@@ -5,6 +5,6 @@ if comex komodo; then                       # Check if Komodo Edit is already in
 
 else
 
-  komodo-install
-  
+  komaur
+
 fi

@@ -29,6 +29,7 @@ source "./lib/install.sh"                     # Load the komodo install function
 
 # Load the distribution-specific libraries
 if [[ $LD == "Arch Linux" ]] || [[ $LD == "Manjaro"* ]]; then
+  . "./lib/aur.sh"
   . "./distribution/arch.sh"
 elif [[ $LD == "CentOS"* ]]; then
   . "./distribution/centos.sh"
