@@ -43,7 +43,7 @@ function komodo-install {
 
   patch -p0 -i $SRC_DEST/_install.py.patch support/_install.py
   patch -p0 -i $SRC_DEST/activestate.py.patch INSTALLDIR/lib/python/lib/python*.*/activestate.py
-  
+
   # package() function
   cd $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
 
@@ -59,6 +59,8 @@ function komodo-install {
       sudo rm -rf $INST_DEST
     fi
     sudo ./install.sh -v -s -I $INST_DEST 2>&1 > /dev/null
+
+    rm $INDIR/resources/komodo-edit2.desktop
 
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $INDIR/resources/komodo-edit2.desktop
