@@ -46,7 +46,6 @@ function komodo-install {
   fi
 
   patch -p0 -i $SRC_DEST/_install.py.patch support/_install.py
-  patch -p0 -i $SRC_DEST/activestate.py.patch INSTALLDIR/lib/python/lib/python*.*/activestate.py
 
   # package() function
   cd $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
