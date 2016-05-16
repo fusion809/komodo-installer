@@ -55,6 +55,9 @@ function komodo-install {
   else
 
     sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
+    
+    sudo mkdir -p /usr/share/applications
+
     sudo sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > /usr/share/applications/komodo-edit.desktop
 
