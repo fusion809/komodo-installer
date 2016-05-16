@@ -11,7 +11,7 @@ function dest {
   printf "Do you want to install Komodo Edit locally or system-wide? [local/system, default: system] "
   read DEST_TYPE
 
-  printf "Where do you want to install Komodo Edit? [Leave empty for $SRC_DEST (local) and /opt (system)] "
+  printf "Where do you want to install Komodo Edit? [Leave empty for $SRC_DEST (local) and /opt/komodo-edit (system)] "
   read INST_DEST
 
   if ! [[ -n $INST_DEST ]]; then
