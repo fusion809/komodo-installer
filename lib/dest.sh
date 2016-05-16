@@ -18,7 +18,7 @@ function dest {
     if [[ $DEST_TYPE == "local" ]]; then
       INST_DEST=$SRC_DEST
     else
-      INST_DEST=/usr
+      INST_DEST=/opt/komodo-edit
     fi
   fi
 
