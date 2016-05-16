@@ -54,7 +54,7 @@ function komodo-install {
 
   else
 
-    if ! [[ -d $INST_DEST ]]; then
+    if [[ -d $INST_DEST ]]; then
       sudo rm -rf $INST_DEST
     fi
     sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
