@@ -13,9 +13,10 @@ function komodo-install {
   printf "SRC DEST is $SRC_DEST"
 
   # Get the source
-  if ! [[ -d $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH ]]; then
-    curl -sL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz | tar xz -C $SRC_DEST
+  if [[ -d $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH ]]; then
+    rm -rf $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
   fi
+  curl -sL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz | tar xz -C $SRC_DEST
 
   cp -a /tmp/komodo-edit/_install.py.patch \
         /tmp/komodo-edit/activestate.py.patch $SRC_DEST
