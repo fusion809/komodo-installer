@@ -9,7 +9,6 @@ function komodo-install {
 
   # Determines where the user likes to install Komodo to
   dest
-  echo $INDIR
 
   # Delete previous install attempt directories
   if [[ -d $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH ]]; then
