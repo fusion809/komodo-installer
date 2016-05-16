@@ -65,11 +65,11 @@ function komodo-install {
     sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > $INDIR/resources/komodo-edit2.desktop
 
+    sudo rm /usr/share/applications/komodo-edit.desktop
     sudo install -dm644 $INDIR/resources/komodo-edit2.desktop /usr/share/applications/komodo-edit.desktop
 
-    if ! [[ -f /usr/bin/komodo ]]; then
-      sudo ln -s $INST_DEST/INSTALLDIR/bin/komodo /usr/bin/komodo
-    fi
+    sudo rm /usr/bin/komodo
+    sudo ln -sf $INST_DEST/INSTALLDIR/bin/komodo /usr/bin/komodo
   fi
 }
 
