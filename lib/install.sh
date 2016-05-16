@@ -10,13 +10,17 @@ function komodo-install {
   # Determines where the user likes to install Komodo to
   dest
 
-  printf "SRC DEST is $SRC_DEST"
-
-  # Get the source
+  # Delete previous install attempt directories
   if [[ -d $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH ]]; then
     rm -rf $SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH
   fi
-  curl -sL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz | tar xz -C $SRC_DEST
+
+  # Get the source
+
+  cd $SRC_DEST
+
+  curl -OsL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
+  tar -xzf Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
 
   cp -a /tmp/komodo-edit/_install.py.patch \
         /tmp/komodo-edit/activestate.py.patch $SRC_DEST
@@ -48,9 +52,8 @@ function komodo-install {
       $INDIR/resources/komodo-edit.desktop > $HOME/.local/share/applications/komodo-edit.desktop
 
   else
-    if ! [[ -d $INST_DEST ]]; then
-      sudo mkdir -p $INST_DEST
-    fi
+
+    sudo mkdir -p $INST_DEST
     sudo ./install.sh -v -s -I $INST_DEST --dest-dir $INST_DEST 2>&1 > /dev/null
     sudo sed -e "s|<%-INSTDIR-%>|$INST_DEST|g" \
       $INDIR/resources/komodo-edit.desktop > /usr/share/applications/komodo-edit.desktop
