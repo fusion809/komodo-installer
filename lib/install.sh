@@ -7,6 +7,9 @@ function komodo-install {
   # Determine the latest version of Komodo Edit
   version
 
+  # Determines where the user likes to install Komodo to
+  dest
+
   # Get the source
   curl -sL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz | tar xz -C $SRC_DEST
 
