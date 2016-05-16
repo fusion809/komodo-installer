@@ -34,7 +34,7 @@ if [[ -d $GHUBM ]]; then
     printf "\n"
     printf "Update your local copy? [y/n] "
     read yn
-    if [[ $yn == "y" ]] || [[ -n $yn ]]; then
+    if ! [[ $yn == "n" ]]; then
 
       ## git
       if [[ -d $GHUBM/komodo-installer/.git ]]; then
@@ -81,7 +81,7 @@ else
     printf "\n"
     printf "Update your local copy? [y/n] "
     read yn
-    if [[ $yn == "y" ]] || [[ -n $yn ]]; then
+    if ! [[ $yn == "n" ]]; then
 
       ## git
       if [[ -d $GHUB/komodo-installer/.git ]]; then
