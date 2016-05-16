@@ -19,7 +19,9 @@ function komodo-install {
 
   cd $SRC_DEST
 
-  curl -OsL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
+  if ! [[ -f Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz ]]; then
+    curl -OsL http://downloads.activestate.com/Komodo/releases/$major/Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
+  fi
   tar -xzf Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
 
   cp -a /tmp/komodo-edit/_install.py.patch \
