@@ -1,5 +1,6 @@
 #!/bin/bash
 function dest {
+  export PRG=$HOME/Programs
   printf "Where do you want to store the binary tarball contents? [Leave empty for $PRG] "
   read SRC_DEST
 
