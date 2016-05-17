@@ -48,6 +48,6 @@ elif [[ $LD == "openSUSE"* ]]; then
   . "./distribution/opensuse.sh"
 elif [[ $LD == "Sabayon"* ]]; then
   . "./distribution/sabayon.sh"
-elif [[ $LD == "Ubuntu"* ]]; then
+elif [[ $LD == "Ubuntu"* ]] || [[ $LD == "Zorin OS" ]]; then
   . "./distribution/ubuntu.sh"
 fi
