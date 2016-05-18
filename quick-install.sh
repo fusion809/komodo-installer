@@ -50,6 +50,9 @@ if [[ -d $GHUBM ]]; then
     fi
   fi
 
+  cd $GHUBM/komodo-installer
+  ./installer.sh
+
 else
   cd $GHUB
 
@@ -90,14 +93,6 @@ else
 
   fi
 
-fi
-###########################################################################################################################################
-
-# Run the main installer script
-if [[ -d $GHUB/komodo-installer ]]; then
   cd $GHUB/komodo-installer
-  ./installer.sh
-elif [[ -d $GHUBM/komodo-installer ]]; then
-  cd $GHUBM/komodo-installer
   ./installer.sh
 fi
