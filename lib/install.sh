@@ -28,8 +28,8 @@ function komodo_install {
   fi
   tar -xzf Komodo-Edit-$major-$minor-linux-$ARCH.tar.gz
 
-  cp -a /tmp/komodo-edit/_install.py.patch \
-        /tmp/komodo-edit/activestate.py.patch $SRC_DEST
+  cp /tmp/komodo-edit/_install.py.patch $SRC_DEST
+  cp /tmp/komodo-edit/activestate.py.patch $SRC_DEST
 
   # package() function
   cd "$SRC_DEST/Komodo-Edit-$major-$minor-linux-$ARCH"
