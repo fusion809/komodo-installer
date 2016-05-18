@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function komodo-install {
+function komodo_install {
   # Determine the architecture we're on
   export ARCH=$(uname -m | sed 's/i[0-9]/x/g')
 
@@ -52,4 +52,4 @@ function komodo-install {
   fi
 }
 
-export -f komodo-install
+export -f komodo_install
