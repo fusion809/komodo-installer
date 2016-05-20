@@ -23,7 +23,7 @@ function dest {
   fi
 
   if ! [[ -d $INST_DEST ]]; then
-    mkdir -p $INST_DEST
+    sudo mkdir -p $INST_DEST
   fi
 
   export SRC_DEST
