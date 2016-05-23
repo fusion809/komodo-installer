@@ -50,4 +50,6 @@ elif [[ $LD == "Sabayon"* ]]; then
   . "./distribution/sabayon.sh"
 elif [[ $LD == "Ubuntu"* ]] || [[ $LD == "Zorin OS" ]]; then
   . "./distribution/ubuntu.sh"
+else
+  . "./distribution/other.sh"
 fi
